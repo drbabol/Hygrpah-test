@@ -18,8 +18,6 @@ const queryTrainer = `
   }
 `
 const client = new GraphQLClient(endpoint)
-console.log('test', client)  
-
 
 const trainers = ref([])
 
