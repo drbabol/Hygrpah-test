@@ -1,6 +1,9 @@
 <script setup>
 
 
+
+const logedUser ="luke.gallo@test.com"
+
 </script>
 
 <template>
@@ -8,7 +11,7 @@
                     
                     <v-list>
                         <v-list-item prepend-avatar="https://randomuser.me/api/portraits/men/46.jpg" title="Luke Gallo"
-                            :subtitle="logedUser.email"></v-list-item>
+                            :subtitle="logedUser"></v-list-item>
                     </v-list>
 
                     <v-divider></v-divider>

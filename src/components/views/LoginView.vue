@@ -8,9 +8,6 @@ const logedUser = {
   email: "luke.gallo@test.com"
 }
 
-
-// defineExpose({ LOGEDUSER });
-
 </script>
 
 

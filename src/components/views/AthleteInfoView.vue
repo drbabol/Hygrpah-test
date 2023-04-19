@@ -3,7 +3,7 @@
 import { ref, onMounted } from 'vue'
 import { GraphQLClient } from 'graphql-request'
 
-const endpoint = "https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clgc7zeg0416n01ujfiliedgg/master" // process.env.HYGRAPH_ENDPOINT
+const endpoint = process.env.HYGRAPH_ENDPOINT //attention this arrive always with quote
 
 const queryTrainer = `
   {
@@ -17,16 +17,16 @@ const queryTrainer = `
     }
   }
 `
-const client = new GraphQLClient(endpoint)
+const client = new GraphQLClient(endpoint.replace(/"/g, ''))
 
 const trainers = ref([])
 
 onMounted(() => {
     client
-        .request(queryTrainer)
+        .request(queryTrainer, {}, {endpoint})
         .then((data) => {
             trainers.value = data.trainers
-            console.log(data)
+            console.log('data', data)
         })
         .catch((error) => {
             console.error(error)
