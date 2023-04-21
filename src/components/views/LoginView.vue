@@ -1,15 +1,13 @@
 
 <script setup>
 
-// This are test constant for the purpose of develping the tool
-const logedUser = {
-  name: 'Luke',
-  lastName: 'Gallo',
-  email: "luke.gallo@test.com"
-}
+import { ref, provide } from "vue";
+import { useUserStore } from "../store/user.js";
+
+const userStore  = useUserStore()
+
 
 </script>
-
 
 
 <template>
